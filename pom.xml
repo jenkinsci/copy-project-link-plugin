@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jvnet.hudson.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.391</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <groupId>hudson.plugins.copyProjectLink</groupId>
+  <artifactId>copy-project-link</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>hpi</packaging>
+  <url></url>
+
+  <developers>
+    <developer>
+      <id>vjuranek</id>
+      <name>Vojtech Juranek</name>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/copy-project-link.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link.git</developerConnection>
+    <url>http://github.com/jenkinsci/copy-project-link</url>
+  </scm>
+
+
+  <distributionManagement>
+    <repository>
+      <id>java.net-m2-repository</id>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases/
+      </url>
+    </repository>
+  </distributionManagement>
+
+</project>
