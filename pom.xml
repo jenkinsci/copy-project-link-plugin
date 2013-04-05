@@ -1,13 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.jvnet.hudson.plugins</groupId>
+    <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.391</version>
-    <relativePath>../pom.xml</relativePath>
+    <version>1.480</version>
+    <relativePath />
   </parent>
 
-  <groupId>hudson.plugins.copyProjectLink</groupId>
   <artifactId>copy-project-link</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>hpi</packaging>
@@ -18,6 +18,10 @@
       <id>vjuranek</id>
       <name>Vojtech Juranek</name>
     </developer>
+    <developer>
+      <id>vlatombe</id>
+      <name>Vincent Latombe</name>
+    </developer>
   </developers>
 
   <scm>
@@ -26,29 +30,19 @@
     <url>http://github.com/jenkinsci/copy-project-link</url>
   </scm>
 
-
-  <distributionManagement>
+  <repositories>
     <repository>
-      <id>java.net-m2-repository</id>
-      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases/
-      </url>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
     </repository>
-  </distributionManagement>
+  </repositories>
 
-
-    <repositories>
-        <repository>
-            <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>  
   
 
