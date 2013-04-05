@@ -19,6 +19,10 @@ public class CopyProjectAction implements Action {
 		return project.getDisplayName() + "-clone";
 	}
 
+  public AbstractProject<?, ?> getProject() {
+    return project;
+  }
+
 	public String getProjectName() {
 		return project.getDisplayName();
 	}

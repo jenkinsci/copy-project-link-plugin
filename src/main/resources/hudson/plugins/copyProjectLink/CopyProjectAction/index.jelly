@@ -30,18 +30,17 @@ THE SOFTWARE.
   <l:layout norefresh="true" permission="${permission}" title="${%New Job}">
     <st:include page="sidepanel.jelly" />
     <l:main-panel>
-      <!--  j:set var="rootURL" value="${request.contextPath}" / -->
-      <s:form method="post" action="${rootURL}/createItem">
+      <j:set var="parentUrl" value="${h.getRelativeLinkTo(it.project.parent)}"/>
+      <s:form method="post" action="${parentUrl}/createItem">
       	<s:block>
-    	<s:entry>
-    		${%Job name}
-    		<s:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${rootURL}/checkJobName?value='+encodeURIComponent(this.value)"/>
+    	<s:entry title="${%Job name}">
+    		<s:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${parentUrl}/checkJobName?value='+encodeURIComponent(this.value)"/>
    		</s:entry>
    		<input type="hidden" name="mode" value="copy" />
    		<input type="hidden" id="from" name="from" value="${it.projectName}"/>
    		</s:block>
       	<s:block>
-      		<input type="submit" name="Submit" value="OK" id="ok" style="margin-left:1em" />
+      		<s:submit name="Submit" value="OK"/>
     	</s:block>
       </s:form>
    	</l:main-panel>
