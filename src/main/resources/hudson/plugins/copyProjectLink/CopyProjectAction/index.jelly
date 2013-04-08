@@ -25,24 +25,24 @@ THE SOFTWARE.
 <!--
   "New Project" page.
 -->
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:s="/lib/form">
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
   <j:getStatic var="permission" className="hudson.model.Item" field="CREATE"/>
   <l:layout norefresh="true" permission="${permission}" title="${%New Job}">
     <st:include page="sidepanel.jelly" />
     <l:main-panel>
       <j:set var="parentUrl" value="${h.getRelativeLinkTo(it.project.parent)}"/>
-      <s:form method="post" action="${parentUrl}/createItem">
-      	<s:block>
-    	<s:entry title="${%Job name}">
-    		<s:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${parentUrl}/checkJobName?value='+encodeURIComponent(this.value)"/>
-   		</s:entry>
+      <f:form method="post" action="${parentUrl}/createItem">
+      	<f:block>
+    	<f:entry title="${%Job name}">
+    		<f:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${parentUrl}/checkJobName?value='+encodeURIComponent(this.value)"/>
+   		</f:entry>
    		<input type="hidden" name="mode" value="copy" />
    		<input type="hidden" id="from" name="from" value="${it.projectName}"/>
-   		</s:block>
-      	<s:block>
-      		<s:submit name="Submit" value="OK"/>
-    	</s:block>
-      </s:form>
+   		</f:block>
+      	<f:block>
+      		<f:submit name="Submit" value="OK"/>
+    	</f:block>
+      </f:form>
    	</l:main-panel>
   </l:layout>
 </j:jelly>
