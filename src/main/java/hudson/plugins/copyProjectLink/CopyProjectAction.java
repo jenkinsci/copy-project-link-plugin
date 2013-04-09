@@ -1,8 +1,11 @@
 package hudson.plugins.copyProjectLink;
 
 import hudson.model.Action;
+import hudson.model.Item;
+import hudson.model.ItemGroup;
 import hudson.model.AbstractProject;
 import hudson.model.Hudson;
+import hudson.security.AccessControlled;
 
 public class CopyProjectAction implements Action {
 
@@ -15,6 +18,10 @@ public class CopyProjectAction implements Action {
 	public String getCloneName() {
 		return project.getDisplayName() + "-clone";
 	}
+
+  public AbstractProject<?, ?> getProject() {
+    return project;
+  }
 
 	public String getProjectName() {
 		return project.getDisplayName();
@@ -42,7 +49,12 @@ public class CopyProjectAction implements Action {
 	}
 
 	private boolean hasPermission(){
-		return Hudson.getInstance().hasPermission(project.CONFIGURE);
+    ItemGroup parent = project.getParent();
+    if (parent instanceof AccessControlled) {
+      AccessControlled accessControlled = (AccessControlled)parent;
+      return accessControlled.hasPermission(Item.CREATE);
+    }
+    return Hudson.getInstance().hasPermission(Item.CREATE);
 	}
 	
 }
