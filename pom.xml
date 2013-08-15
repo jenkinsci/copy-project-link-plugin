@@ -10,6 +10,7 @@
   <artifactId>copy-project-link</artifactId>
   <version>1.2-SNAPSHOT</version>
   <packaging>hpi</packaging>
+  <name>Copy project link plugin</name>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/Copy+project+link+plugin</url>
 
   <developers>
