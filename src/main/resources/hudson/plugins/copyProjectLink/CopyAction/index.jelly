@@ -27,7 +27,7 @@ THE SOFTWARE.
 -->
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
   <j:getStatic var="permission" className="hudson.model.Item" field="CREATE"/>
-  <l:layout norefresh="true" permission="${permission}" title="${%New ${it.item.pronoun}}">
+  <l:layout norefresh="true" permission="${permission}" title="${%new(it.item.pronoun)}">
     <st:include page="sidepanel.jelly" />
     <l:main-panel>
       <j:set var="parentUrl" value="${rootURL}${h.getRelativeLinkTo(it.item.parent)}"/>
