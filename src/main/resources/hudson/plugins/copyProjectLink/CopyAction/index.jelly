@@ -1,7 +1,7 @@
 <!--
 The MIT License
 
-Copyright (c) 2004-2010, Sun Microsystems, Inc., Kohsuke Kawaguchi, id:cactusman
+Copyright (c) 2004-2013, Sun Microsystems, Inc., Kohsuke Kawaguchi, id:cactusman, Vincent Latombe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,17 +27,17 @@ THE SOFTWARE.
 -->
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
   <j:getStatic var="permission" className="hudson.model.Item" field="CREATE"/>
-  <l:layout norefresh="true" permission="${permission}" title="${%New Job}">
+  <l:layout norefresh="true" permission="${permission}" title="${%new(it.item.pronoun)}">
     <st:include page="sidepanel.jelly" />
     <l:main-panel>
-      <j:set var="parentUrl" value="${rootURL}${h.getRelativeLinkTo(it.project.parent)}"/>
+      <j:set var="parentUrl" value="${rootURL}${h.getRelativeLinkTo(it.item.parent)}"/>
       <f:form method="post" action="${parentUrl}/createItem">
       	<f:block>
     	<f:entry title="${%Job name}">
     		<f:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${parentUrl}/checkJobName?value='+encodeURIComponent(this.value)"/>
    		</f:entry>
    		<input type="hidden" name="mode" value="copy" />
-   		<input type="hidden" id="from" name="from" value="${it.projectName}"/>
+   		<input type="hidden" id="from" name="from" value="${it.itemName}"/>
    		</f:block>
       	<f:block>
       		<f:submit name="Submit" value="OK"/>

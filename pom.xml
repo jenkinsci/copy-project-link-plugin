@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.480</version>
+    <version>1.480.3</version>
     <relativePath />
   </parent>
 
@@ -23,6 +23,16 @@
       <name>Vincent Latombe</name>
     </developer>
   </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>cloudbees-folder</artifactId>
+      <version>4.0</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
 
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/copy-project-link-plugin.git</connection>

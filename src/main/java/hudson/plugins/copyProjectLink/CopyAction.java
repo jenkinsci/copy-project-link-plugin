@@ -3,28 +3,28 @@ package hudson.plugins.copyProjectLink;
 import hudson.model.Action;
 import hudson.model.Item;
 import hudson.model.ItemGroup;
-import hudson.model.AbstractProject;
+import hudson.model.AbstractItem;
 import hudson.model.Hudson;
 import hudson.security.AccessControlled;
 
-public class CopyProjectAction implements Action {
+public class CopyAction<T extends AbstractItem> implements Action {
 
-	final private AbstractProject<?, ?> project;
+  final private T item;
 
-	public CopyProjectAction(AbstractProject project) {
-		this.project = project;
+  public CopyAction(T item) {
+		this.item = item;
 	}
 
 	public String getCloneName() {
-		return project.getDisplayName() + "-clone";
+		return item.getDisplayName() + "-clone";
 	}
 
-  public AbstractProject<?, ?> getProject() {
-    return project;
+  public T getItem() {
+    return item;
   }
 
-	public String getProjectName() {
-		return project.getDisplayName();
+	public String getItemName() {
+		return item.getDisplayName();
 	}
 
 	public String getIconFileName() {
@@ -36,20 +36,20 @@ public class CopyProjectAction implements Action {
 
 	public String getDisplayName() {
 		if (hasPermission()) {
-			return "Copy project";
+      return "Copy " + item.getPronoun();
 		}
 		return null;
 	}
 
 	public String getUrlName() {
 		if(hasPermission()) {
-			return "copy-project";
+      return "copy";
 		}
 		return null;
 	}
 
 	private boolean hasPermission(){
-    ItemGroup parent = project.getParent();
+    ItemGroup parent = item.getParent();
     if (parent instanceof AccessControlled) {
       AccessControlled accessControlled = (AccessControlled)parent;
       return accessControlled.hasPermission(Item.CREATE);

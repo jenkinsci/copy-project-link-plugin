@@ -1,6 +1,7 @@
 package hudson.plugins.copyProjectLink;
 
 import hudson.Extension;
+import hudson.model.Action;
 import hudson.model.TransientProjectActionFactory;
 import hudson.model.AbstractProject;
 
@@ -14,8 +15,8 @@ public class CopyProjectActionFactory extends TransientProjectActionFactory{
 	 * {@inheritDoc}}
 	 */
 	@Override
-	public Collection<CopyProjectAction> createFor(AbstractProject target){
-    return Collections.singleton(new CopyProjectAction(target));
+	public Collection<? extends Action> createFor(AbstractProject target){
+    return Collections.singleton(new CopyAction<AbstractProject>(target));
 	}
 
 }
