@@ -8,7 +8,7 @@
   </parent>
 
   <artifactId>copy-project-link</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.3</version>
   <packaging>hpi</packaging>
   <name>Copy project link plugin</name>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/Copy+project+link+plugin</url>
@@ -38,6 +38,7 @@
     <connection>scm:git:git://github.com/jenkinsci/copy-project-link-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link-plugin.git</developerConnection>
     <url>http://github.com/jenkinsci/copy-project-link-plugin</url>
+    <tag>copy-project-link-1.3</tag>
   </scm>
 
   <repositories>
