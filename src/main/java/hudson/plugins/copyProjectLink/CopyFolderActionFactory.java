@@ -9,7 +9,7 @@ import java.util.Collections;
 import com.cloudbees.hudson.plugins.folder.TransientFolderActionFactory;
 import com.cloudbees.hudson.plugins.folder.Folder;
 
-@Extension
+@Extension(optional = true)
 public class CopyFolderActionFactory extends TransientFolderActionFactory {
   /**
    * {@inheritDoc}
