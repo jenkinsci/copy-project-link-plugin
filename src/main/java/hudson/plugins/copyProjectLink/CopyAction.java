@@ -16,7 +16,7 @@ public class CopyAction<T extends AbstractItem> implements Action {
 	}
 
 	public String getCloneName() {
-		return item.getDisplayName() + "-clone";
+		return item.getName() + "-clone";
 	}
 
   public T getItem() {
@@ -24,7 +24,7 @@ public class CopyAction<T extends AbstractItem> implements Action {
   }
 
 	public String getItemName() {
-		return item.getDisplayName();
+		return item.getName();
 	}
 
 	public String getIconFileName() {
