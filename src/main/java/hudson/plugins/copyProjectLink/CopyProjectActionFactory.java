@@ -10,13 +10,8 @@ import java.util.Collections;
 
 @Extension
 public class CopyProjectActionFactory extends TransientProjectActionFactory{
-	
-	/**
-	 * {@inheritDoc}}
-	 */
-	@Override
-	public Collection<? extends Action> createFor(AbstractProject target){
-    return Collections.singleton(new CopyAction<AbstractProject>(target));
-	}
-
+    @Override @SuppressWarnings("rawtypes")
+    public Collection<? extends Action> createFor(AbstractProject target){
+        return Collections.singleton(new CopyAction<AbstractProject>(target));
+    }
 }

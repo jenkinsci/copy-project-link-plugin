@@ -11,12 +11,8 @@ import com.cloudbees.hudson.plugins.folder.Folder;
 
 @Extension(optional = true)
 public class CopyFolderActionFactory extends TransientFolderActionFactory {
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public Collection<? extends Action> createFor(Folder target) {
-    return Collections.singleton(new CopyAction<Folder>(target));
-  }
-
+    @Override
+    public Collection<? extends Action> createFor(Folder target) {
+        return Collections.singleton(new CopyAction<Folder>(target));
+    }
 }
