@@ -1,4 +1,4 @@
-package hudson.plugins.copyProjectLink;
+package io.jenkins.plugins.copyprojectlink;
 
 import hudson.Extension;
 import hudson.model.Action;
