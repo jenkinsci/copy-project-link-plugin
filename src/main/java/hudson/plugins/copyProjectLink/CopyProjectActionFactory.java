@@ -12,7 +12,7 @@ import java.util.Collections;
 @Extension
 public class CopyProjectActionFactory extends TransientProjectActionFactory{
     @Override
-    public Collection<? extends Action> createFor(@SuppressWarnings("rawtypes") AbstractProject target){
+    public Collection<? extends Action> createFor(AbstractProject target){
         return target instanceof TopLevelItem
                 ? Collections.singleton(new CopyAction<AbstractProject<?, ?>>(target))
                 : Collections.<Action>emptyList()

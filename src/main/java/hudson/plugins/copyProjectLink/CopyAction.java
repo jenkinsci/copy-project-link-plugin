@@ -27,9 +27,14 @@ public class CopyAction<T extends AbstractItem> implements Action {
         return item.getName();
     }
 
+    @Override
     public String getIconFileName() {
+        return null;
+    }
+
+    public String getIconClassName() {
         if (hasPermission()) {
-            return "/plugin/copy-project-link/img/edit-copy.png";
+            return "icon-clipboard";
         }
         return null;
     }
@@ -54,6 +59,6 @@ public class CopyAction<T extends AbstractItem> implements Action {
             AccessControlled accessControlled = (AccessControlled)parent;
             return accessControlled.hasPermission(Item.CREATE);
         }
-        return Jenkins.getInstance().hasPermission(Item.CREATE);
+        return Jenkins.get().hasPermission(Item.CREATE);
     }
 }
