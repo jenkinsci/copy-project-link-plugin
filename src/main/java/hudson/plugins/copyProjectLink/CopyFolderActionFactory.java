@@ -8,9 +8,15 @@ import java.util.Collections;
 
 import com.cloudbees.hudson.plugins.folder.TransientFolderActionFactory;
 import com.cloudbees.hudson.plugins.folder.Folder;
+import jenkins.model.TransientActionFactory;
 
 @Extension(optional = true)
-public class CopyFolderActionFactory extends TransientFolderActionFactory {
+public class CopyFolderActionFactory extends TransientActionFactory<Folder> {
+    @Override
+    public Class<Folder> type() {
+        return Folder.class;
+    }
+
     @Override
     public Collection<? extends Action> createFor(Folder target) {
         return Collections.singleton(new CopyAction<Folder>(target));

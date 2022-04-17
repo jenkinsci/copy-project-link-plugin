@@ -3,43 +3,44 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.480.3</version>
+    <version>4.40</version>
     <relativePath />
   </parent>
 
   <artifactId>copy-project-link</artifactId>
-  <version>1.6-SNAPSHOT</version>
+  <version>${changelist}</version>
   <packaging>hpi</packaging>
-  <name>Copy project link plugin</name>
-  <url>http://wiki.jenkins-ci.org/display/JENKINS/Copy+project+link+plugin</url>
+  <name>Copy project link</name>
+  <url>https://plugins.jenkins.io/copy-project-link/</url>
 
-  <developers>
-    <developer>
-      <id>vjuranek</id>
-      <name>Vojtech Juranek</name>
-    </developer>
-    <developer>
-      <id>vlatombe</id>
-      <name>Vincent Latombe</name>
-    </developer>
-  </developers>
+  <licenses>
+    <license>
+      <name>The MIT license</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-folder</artifactId>
-      <version>4.0</version>
+      <version>6.714.v79e858ef76a_2</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
 
-
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/copy-project-link-plugin.git</connection>
+    <connection>scm:git:https://github.com/jenkinsci/copy-project-link-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link-plugin.git</developerConnection>
-    <url>http://github.com/jenkinsci/copy-project-link-plugin</url>
-    <tag>HEAD</tag>
+    <url>https://github.com/jenkinsci/copy-project-link-plugin</url>
+    <tag>${scmTag}</tag>
   </scm>
+
+  <properties>
+    <changelist>999999-SNAPSHOT</changelist>
+    <jenkins.version>2.332.2</jenkins.version>
+  </properties>
 
   <repositories>
     <repository>
