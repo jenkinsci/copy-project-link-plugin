@@ -13,6 +13,18 @@
   <name>Copy project link</name>
   <url>https://plugins.jenkins.io/copy-project-link/</url>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.332.x</artifactId>
+        <version>1577.v63609d9cb_5dc</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <licenses>
     <license>
       <name>The MIT license</name>
@@ -25,7 +37,6 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-folder</artifactId>
-      <version>6.729.v2b_9d1a_74d673</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
