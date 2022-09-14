@@ -34,7 +34,7 @@ public class CopyAction<T extends AbstractItem> implements Action {
 
     public String getIconClassName() {
         if (hasPermission()) {
-            return "icon-clipboard";
+            return "symbol-clipboard-outline plugin-ionicons-api";
         }
         return null;
     }
