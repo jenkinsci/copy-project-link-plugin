@@ -1,15 +1,15 @@
 package io.jenkins.plugins.copyprojectlink;
 
+import hudson.model.AbstractItem;
 import hudson.model.Action;
 import hudson.model.Item;
 import hudson.model.ItemGroup;
-import hudson.model.AbstractItem;
 import hudson.security.AccessControlled;
 import jenkins.model.Jenkins;
 
 public class CopyAction<T extends AbstractItem> implements Action {
 
-    final private T item;
+    private final T item;
 
     public CopyAction(T item) {
         this.item = item;
@@ -47,16 +47,16 @@ public class CopyAction<T extends AbstractItem> implements Action {
     }
 
     public String getUrlName() {
-        if(hasPermission()) {
+        if (hasPermission()) {
             return "copy";
         }
         return null;
     }
 
-    private boolean hasPermission(){
+    private boolean hasPermission() {
         ItemGroup<?> parent = item.getParent();
         if (parent instanceof AccessControlled) {
-            AccessControlled accessControlled = (AccessControlled)parent;
+            AccessControlled accessControlled = (AccessControlled) parent;
             return accessControlled.hasPermission(Item.CREATE);
         }
         return Jenkins.get().hasPermission(Item.CREATE);

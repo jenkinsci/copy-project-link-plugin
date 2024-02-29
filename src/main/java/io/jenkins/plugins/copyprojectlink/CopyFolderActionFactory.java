@@ -1,12 +1,10 @@
 package io.jenkins.plugins.copyprojectlink;
 
+import com.cloudbees.hudson.plugins.folder.Folder;
 import hudson.Extension;
 import hudson.model.Action;
-
 import java.util.Collection;
 import java.util.Collections;
-
-import com.cloudbees.hudson.plugins.folder.Folder;
 import jenkins.model.TransientActionFactory;
 
 @Extension(optional = true)

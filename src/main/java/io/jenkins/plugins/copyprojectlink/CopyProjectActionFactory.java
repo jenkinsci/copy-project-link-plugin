@@ -1,21 +1,19 @@
 package io.jenkins.plugins.copyprojectlink;
 
 import hudson.Extension;
+import hudson.model.AbstractProject;
 import hudson.model.Action;
 import hudson.model.TopLevelItem;
 import hudson.model.TransientProjectActionFactory;
-import hudson.model.AbstractProject;
-
 import java.util.Collection;
 import java.util.Collections;
 
 @Extension
-public class CopyProjectActionFactory extends TransientProjectActionFactory{
+public class CopyProjectActionFactory extends TransientProjectActionFactory {
     @Override
-    public Collection<? extends Action> createFor(AbstractProject target){
+    public Collection<? extends Action> createFor(AbstractProject target) {
         return target instanceof TopLevelItem
                 ? Collections.singleton(new CopyAction<AbstractProject<?, ?>>(target))
-                : Collections.<Action>emptyList()
-        ;
+                : Collections.<Action>emptyList();
     }
 }

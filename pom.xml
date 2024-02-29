@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -13,18 +14,6 @@
   <name>Copy project link</name>
   <url>https://plugins.jenkins.io/copy-project-link/</url>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.jenkins.tools.bom</groupId>
-        <artifactId>bom-2.361.x</artifactId>
-        <version>2102.v854b_fec19c92</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <licenses>
     <license>
       <name>The MIT license</name>
@@ -32,6 +21,31 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/jenkinsci/copy-project-link-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link-plugin.git</developerConnection>
+    <tag>${scmTag}</tag>
+    <url>https://github.com/jenkinsci/copy-project-link-plugin</url>
+  </scm>
+
+  <properties>
+    <changelist>999999-SNAPSHOT</changelist>
+    <jenkins.version>2.426.3</jenkins.version>
+    <spotless.check.skip>false</spotless.check.skip>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.426.x</artifactId>
+        <version>2839.v003b_4d9d24fd</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -44,18 +58,6 @@
       <optional>true</optional>
     </dependency>
   </dependencies>
-
-  <scm>
-    <connection>scm:git:https://github.com/jenkinsci/copy-project-link-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/copy-project-link-plugin</url>
-    <tag>${scmTag}</tag>
-  </scm>
-
-  <properties>
-    <changelist>999999-SNAPSHOT</changelist>
-    <jenkins.version>2.361.4</jenkins.version>
-  </properties>
 
   <repositories>
     <repository>
