@@ -34,7 +34,7 @@ THE SOFTWARE.
       <f:form method="post" action="${parentUrl}/createItem">
       	<f:block>
     	<f:entry title="${%jobName}">
-    		<f:textbox id="name" name="name" value="${it.cloneName}" checkUrl="'${parentUrl}/checkJobName?value='+encodeURIComponent(this.value)"/>
+    		<f:textbox id="name" name="name" value="${it.cloneName}" checkUrl="${parentUrl}/checkJobName" checkDependsOn=""/>
    		</f:entry>
    		<input type="hidden" name="mode" value="copy" />
    		<input type="hidden" id="from" name="from" value="${it.itemName}"/>
