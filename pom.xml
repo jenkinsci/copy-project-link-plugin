@@ -11,27 +11,40 @@
   <artifactId>copy-project-link</artifactId>
   <version>${changelist}</version>
   <packaging>hpi</packaging>
-  <name>Copy project link</name>
-  <url>https://plugins.jenkins.io/copy-project-link/</url>
 
+  <name>Copy project link</name>
+  <description>This plugin adds the "Copy project" link into left side panel in the main project page to facilitate copying of job configuration.</description>
+  <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
   <licenses>
     <license>
-      <name>The MIT license</name>
+      <name>MIT</name>
       <url>https://opensource.org/licenses/MIT</url>
-      <distribution>repo</distribution>
     </license>
   </licenses>
 
+  <developers>
+    <developer>
+      <id>mPokornyETM</id>
+      <name>Martin Pokorny</name>
+      <email>martin.pokorny@etm.at</email>
+    </developer>
+  </developers>
+
   <scm>
-    <connection>scm:git:https://github.com/jenkinsci/copy-project-link-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/copy-project-link-plugin.git</developerConnection>
+    <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
     <tag>${scmTag}</tag>
-    <url>https://github.com/jenkinsci/copy-project-link-plugin</url>
+    <url>https://github.com/${gitHubRepo}</url>
   </scm>
 
   <properties>
     <changelist>999999-SNAPSHOT</changelist>
-    <jenkins.version>2.426.3</jenkins.version>
+    <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+    <jenkins.baseline>2.426</jenkins.baseline>
+    <jenkins.version>${jenkins.baseline}.3</jenkins.version>
+    <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
+    <spotbugs.effort>Max</spotbugs.effort>
+    <spotbugs.threshold>Low</spotbugs.threshold>
     <spotless.check.skip>false</spotless.check.skip>
   </properties>
 
@@ -39,7 +52,7 @@
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
-        <artifactId>bom-2.426.x</artifactId>
+        <artifactId>bom-${jenkins.baseline}.x</artifactId>
         <version>3208.vb_21177d4b_cd9</version>
         <type>pom</type>
         <scope>import</scope>
